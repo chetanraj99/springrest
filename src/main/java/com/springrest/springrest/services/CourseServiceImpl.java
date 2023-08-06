@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CoursesService {
 //				break;
 //			}
 //		}
-		return courseDao.getOne(courseId);
+		return courseDao.findById(courseId).get();
 	}
 
 	@Override
@@ -58,6 +58,15 @@ public class CourseServiceImpl implements CoursesService {
 //				e.setDescription(course.getDescription());
 //			}
 //		});
+		courseDao.save(course);
+		return course;
+	}
+	
+	@Override
+	public Courses updateCourse1(long courseId) {
+		Courses course=courseDao.findById(courseId).get();
+		String s=course.getTitle();
+		course.setTitle(s+"hi");
 		courseDao.save(course);
 		return course;
 	}

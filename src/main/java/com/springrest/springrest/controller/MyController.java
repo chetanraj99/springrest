@@ -21,6 +21,7 @@ public class MyController {
 	@Autowired
 	private CoursesService courseServices;
 	
+	
 	@GetMapping("/home")
 	public String home() {
 		return "Welcome to the bootspring jpa courses application.";
@@ -44,6 +45,11 @@ public class MyController {
 	@PutMapping("/courses")
 	public Courses updateCourse(@RequestBody Courses course) {
 		return this.courseServices.updateCourse(course);
+	}
+	
+	@PutMapping("/courses/{courseId}")
+	public Courses updateCourse1(@PathVariable String courseId) {
+		return this.courseServices.updateCourse1(Long.parseLong(courseId));
 	}
 	
 	@DeleteMapping("courses/{courseId}")

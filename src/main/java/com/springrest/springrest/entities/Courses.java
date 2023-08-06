@@ -18,7 +18,7 @@ public class Courses {
 	public Courses() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
+	} 
 	public long getId() {
 		return id;
 	}

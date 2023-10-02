@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import com.springrest.springrest.entities.Courses;
 import com.springrest.springrest.services.CoursesService;
-@CrossOrigin(origins="https://curious-cactus-7a0126.netlify.app")
+@CrossOrigin(origins="*")
 @RestController
 public class MyController {
 	@Autowired
